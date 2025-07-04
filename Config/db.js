@@ -1,18 +1,18 @@
 const mysql = require("mysql2");
 
 const db = mysql.createConnection({
-  host: "yamabiko.proxy.rlwy.net", // ✅ Host only, no port here
-  port: 29709, // ✅ Port is separate
-  user: "root",
-  password: "lECWDahzDvSlCaUqLhXRQBhIwlYiBFbN", // ✅ Replace with yours
-  database: "railway",
+  host: "localhost", // or "127.0.0.1"
+  port: 3306, // default MySQL port
+  user: "root", // default username in local setup
+  password: "admin", // default password is empty in XAMPP/WAMP
+  database: "myprojectdb", // change to your local database name
 });
 
 db.connect((err) => {
   if (err) {
     console.error("❌ DB connection failed:", err);
   } else {
-    console.log("✅ Connected to Railway MySQL");
+    console.log("✅ Connected to Local MySQL");
   }
 });
 
